@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: sincer
+  datasource:
+    username: root
+    password: root
+    # serverTimezone=UTC ??????
+    url: jdbc:mysql://localhost:3306/factory?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    # mysql8 ???? cj
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+#    date-format: yyyy-MM-dd HH:mm:ss
+#    time-zone: GMT+8
+#  mvc:
+#    format:
+#      date: yyyy-MM-dd
+#      date-time: yyyy-MM-dd HH:mm:ss
+  servlet:
+    multipart:
+      max-file-size: 500MB
+      max-request-size: 1000MB
+  main:
+    allow-circular-references: true
+
+server:
+  port: 8081
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plane.sincer.mapper.ProductRecordResultMapper">
+
+    <resultMap id="BaseResultMap" type="com.plane.sincer.entity.ProductRecordResult">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="recId" column="rec_id" jdbcType="VARCHAR"/>
+            <result property="opTime" column="op_time" jdbcType="INTEGER"/>
+            <result property="loadTime" column="load_time" jdbcType="INTEGER"/>
+            <result property="processTime" column="process_time" jdbcType="INTEGER"/>
+            <result property="theoryRate" column="theory_rate" jdbcType="DECIMAL"/>
+            <result property="timeRate" column="time_rate" jdbcType="DECIMAL"/>
+            <result property="performanceRate" column="performance_rate" jdbcType="DECIMAL"/>
+            <result property="passPdCount" column="pass_pd_count" jdbcType="INTEGER"/>
+            <result property="theoryHigh" column="theory_high" jdbcType="DECIMAL"/>
+            <result property="passRate" column="pass_rate" jdbcType="DECIMAL"/>
+            <result property="dvUseRate" column="dv_use_rate" jdbcType="DECIMAL"/>
+            <result property="realCt" column="real_ct" jdbcType="DECIMAL"/>
+            <result property="sumPoint" column="sum_point" jdbcType="INTEGER"/>
+            <result property="theoryPerTime" column="theory_per_time" jdbcType="DECIMAL"/>
+            <result property="dvCompRate" column="dv_comp_rate" jdbcType="DECIMAL"/>
+            <result property="realHigh" column="real_high" jdbcType="DECIMAL"/>
+            <result property="overRate" column="over_rate" jdbcType="DECIMAL"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,rec_id,op_time,
+        load_time,process_time,theory_rate,
+        time_rate,performance_rate,pass_pd_count,
+        theory_high,pass_rate,dv_use_rate,
+        real_ct,sum_point,theory_per_time,
+        dv_comp_rate,real_high,over_rate
+    </sql>
+</mapper>

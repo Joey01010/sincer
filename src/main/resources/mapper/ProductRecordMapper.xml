@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plane.sincer.mapper.ProductRecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.plane.sincer.entity.ProductRecord">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="pdDate" column="pd_date" jdbcType="TIMESTAMP"/>
+            <result property="pdId" column="pd_id" jdbcType="VARCHAR"/>
+            <result property="planOp" column="plan_op" jdbcType="INTEGER"/>
+            <result property="planTime" column="plan_time" jdbcType="INTEGER"/>
+            <result property="startTime" column="start_time" jdbcType="TIME"/>
+            <result property="endTime" column="end_time" jdbcType="TIME"/>
+            <result property="restTime" column="rest_time" jdbcType="INTEGER"/>
+            <result property="useTime" column="use_time" jdbcType="INTEGER"/>
+            <result property="className" column="class_name" jdbcType="VARCHAR"/>
+            <result property="saveCount" column="save_count" jdbcType="INTEGER"/>
+            <result property="ruinCount" column="ruin_count" jdbcType="INTEGER"/>
+            <result property="halfRuinCount" column="half_ruin_count" jdbcType="INTEGER"/>
+            <result property="refuseCount" column="refuse_count" jdbcType="INTEGER"/>
+            <result property="pdStaff" column="pd_staff" jdbcType="INTEGER"/>
+            <result property="bfClassMt" column="bf_class_mt" jdbcType="INTEGER"/>
+            <result property="bfStart" column="bf_start" jdbcType="INTEGER"/>
+            <result property="qcTime" column="qc_time" jdbcType="INTEGER"/>
+            <result property="threeS" column="three_s" jdbcType="INTEGER"/>
+            <result property="dvTime" column="dv_time" jdbcType="INTEGER"/>
+            <result property="newCmTime" column="new_cm_time" jdbcType="INTEGER"/>
+            <result property="custmCm" column="custm_cm" jdbcType="INTEGER"/>
+            <result property="planStop" column="plan_stop" jdbcType="INTEGER"/>
+            <result property="dvBroken" column="dv_broken" jdbcType="INTEGER"/>
+            <result property="lackTime" column="lack_time" jdbcType="INTEGER"/>
+            <result property="dlWait" column="dl_wait" jdbcType="INTEGER"/>
+            <result property="anQa" column="an_qa" jdbcType="INTEGER"/>
+            <result property="remark" column="remark" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,pd_date,pd_id,
+        plan_op,plan_time,start_time,
+        end_time,rest_time,use_time,
+        class_name,save_count,ruin_count,
+        half_ruin_count,refuse_count,pd_staff,
+        bf_class_mt,bf_start,qc_time,
+        three_s,dv_time,new_cm_time,
+        custm_cm,plan_stop,dv_broken,
+        lack_time,dl_wait,an_qa,
+        remark
+    </sql>
+</mapper>

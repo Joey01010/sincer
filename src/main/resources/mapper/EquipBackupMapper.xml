@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plane.sincer.mapper.EquipBackupMapper">
+
+    <resultMap id="BaseResultMap" type="com.plane.sincer.entity.EquipBackup">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="code" column="code" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="spec" column="spec" jdbcType="VARCHAR"/>
+            <result property="address" column="address" jdbcType="VARCHAR"/>
+            <result property="maxQuantity" column="max_quantity" jdbcType="INTEGER"/>
+            <result property="minQuantity" column="min_quantity" jdbcType="INTEGER"/>
+            <result property="currQuantity" column="curr_quantity" jdbcType="INTEGER"/>
+            <result property="unit" column="unit" jdbcType="VARCHAR"/>
+            <result property="type" column="type" jdbcType="VARCHAR"/>
+            <result property="brand" column="brand" jdbcType="VARCHAR"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,code,name,
+        spec,address,max_quantity,
+        min_quantity,curr_quantity,unit,
+        type,brand,remark
+    </sql>
+</mapper>

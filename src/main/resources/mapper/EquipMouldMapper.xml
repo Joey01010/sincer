@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plane.sincer.mapper.EquipMouldMapper">
+
+    <resultMap id="BaseResultMap" type="com.plane.sincer.entity.EquipMould">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="code" column="code" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="teminalOld" column="teminal_old" jdbcType="VARCHAR"/>
+            <result property="teminalNew" column="teminal_new" jdbcType="VARCHAR"/>
+            <result property="currQuanlity" column="curr_quanlity" jdbcType="INTEGER"/>
+            <result property="isExist" column="is_exist" jdbcType="INTEGER"/>
+            <result property="address" column="address" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="brand" column="brand" jdbcType="VARCHAR"/>
+            <result property="useCount" column="use_count" jdbcType="INTEGER"/>
+            <result property="outStoreTime" column="out_store_time" jdbcType="DATE"/>
+            <result property="inStoreTime" column="in_store_time" jdbcType="DATE"/>
+            <result property="operaId" column="opera_id" jdbcType="VARCHAR"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,code,name,
+        teminal_old,teminal_new,curr_quanlity,
+        is_exist,address,status,
+        brand,use_count,out_store_time,
+        in_store_time,opera_id,remark
+    </sql>
+</mapper>
