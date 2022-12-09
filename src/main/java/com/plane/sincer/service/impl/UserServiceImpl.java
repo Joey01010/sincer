@@ -1,5 +1,6 @@
 package com.plane.sincer.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.plane.sincer.entity.Dept;
 import com.plane.sincer.entity.Role;
@@ -29,6 +30,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
 
     @Autowired
     private DeptService deptService;
+
+    @Override
+    public User getUserByName(String name) {
+        User user = super.getOne(new QueryWrapper<User>().eq("user_name", name));
+        return dataHandler(user.getId());
+    }
 
     @Override
     public User getById(Serializable id) {
