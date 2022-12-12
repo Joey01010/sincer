@@ -1,8 +1,8 @@
 package com.plane.sincer.controller;
 
 import com.plane.sincer.common.ResponseEntity;
-import com.plane.sincer.entity.EquipMould;
-import com.plane.sincer.service.EquipMouldService;
+import com.plane.sincer.entity.EquipMouldTool;
+import com.plane.sincer.service.EquipMouldToolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,14 +10,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/equip")
-public class EquipMouldController {
+public class EquipMouldToolController {
 
     @Autowired
-    private EquipMouldService equipMouldService;
-    @GetMapping("/mould/list")
+    private EquipMouldToolService equipMouldToolService;
+
+    @GetMapping("/tool/list")
     public ResponseEntity getAllEquipMould(){
         ResponseEntity<Object> entity = new ResponseEntity<>();
-        List<EquipMould> list = equipMouldService.list();
+        List<EquipMouldTool> list = equipMouldToolService.list();
         if(list != null){
             entity.setCode("200");
             entity.setMessage("查询成功");
@@ -30,14 +31,14 @@ public class EquipMouldController {
         return entity;
     }
 
-    @GetMapping("/mould/{id}")
+    @GetMapping("/tool/{id}")
     public ResponseEntity getEquipMould(@PathVariable("id") Integer id){
         ResponseEntity<Object> entity = new ResponseEntity<>();
-        EquipMould mould = equipMouldService.getById(id);
-        if(mould != null){
+        EquipMouldTool tool = equipMouldToolService.getById(id);
+        if(tool != null){
             entity.setCode("200");
             entity.setMessage("查询成功");
-            entity.setBody(mould);
+            entity.setBody(tool);
         } else {
             entity.setCode("404");
             entity.setMessage("查询失败");
@@ -45,10 +46,10 @@ public class EquipMouldController {
         return entity;
     }
 
-    @PostMapping("/mould/add")
-    public ResponseEntity addEquipMould(EquipMould equipMould){
+    @PostMapping("/tool/add")
+    public ResponseEntity addEquipMould(EquipMouldTool equipMouldTool){
         ResponseEntity<Object> entity = new ResponseEntity<>();
-        boolean save = equipMouldService.save(equipMould);
+        boolean save = equipMouldToolService.save(equipMouldTool);
         if(save){
             entity.setCode("200");
             entity.setMessage("添加成功");
@@ -59,10 +60,10 @@ public class EquipMouldController {
         return entity;
     }
 
-    @PostMapping("/mould/edit")
-    public ResponseEntity updEquipMould(EquipMould equipMould){
+    @PostMapping("/tool/edit")
+    public ResponseEntity updEquipMould(EquipMouldTool equipMouldTool){
         ResponseEntity<Object> entity = new ResponseEntity<>();
-        boolean update = equipMouldService.updateById(equipMould);
+        boolean update = equipMouldToolService.updateById(equipMouldTool);
         if(update){
             entity.setCode("200");
             entity.setMessage("修改成功");
@@ -73,9 +74,9 @@ public class EquipMouldController {
         return entity;
     }
 
-    @PostMapping("/mould/del/{id}")
+    @PostMapping("/tool/del/{id}")
     public ResponseEntity delEquipMould(@PathVariable Integer id) {
-        boolean del = equipMouldService.removeById(id);
+        boolean del = equipMouldToolService.removeById(id);
         ResponseEntity entity = new ResponseEntity();
         if (del) {
             entity.setCode("200");

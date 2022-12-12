@@ -10,4 +10,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface EquipMouldService extends IService<EquipMould> {
 
+    EquipMould getEquipMouldByTerminalId(String terminalId);
 }

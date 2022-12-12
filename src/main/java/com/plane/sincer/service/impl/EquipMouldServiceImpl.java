@@ -1,5 +1,6 @@
 package com.plane.sincer.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.plane.sincer.entity.EquipMould;
 import com.plane.sincer.service.EquipMouldService;
@@ -14,7 +15,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class EquipMouldServiceImpl extends ServiceImpl<EquipMouldMapper, EquipMould>
     implements EquipMouldService{
-
+    @Override
+    public EquipMould getEquipMouldByTerminalId(String terminalId) {
+        EquipMould mould = this.getOne(new QueryWrapper<EquipMould>().eq("terminal_new", terminalId));
+        return mould;
+    }
 }
 
 

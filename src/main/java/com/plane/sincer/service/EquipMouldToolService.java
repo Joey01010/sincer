@@ -1,5 +1,6 @@
 package com.plane.sincer.service;
 
+import com.plane.sincer.entity.EquipMould;
 import com.plane.sincer.entity.EquipMouldTool;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface EquipMouldToolService extends IService<EquipMouldTool> {
 
+    EquipMouldTool getEquipMouldToolByTerminalId(String terminalId);
 }
