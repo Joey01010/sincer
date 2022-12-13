@@ -2,6 +2,7 @@ package com.plane.sincer.service;
 
 import com.plane.sincer.entity.EquipBackup;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
 * @author Admin
@@ -10,4 +11,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface EquipBackupService extends IService<EquipBackup> {
 
+    Boolean importEquipBackupByExcel(MultipartFile file);
 }

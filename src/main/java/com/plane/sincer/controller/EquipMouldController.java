@@ -5,7 +5,10 @@ import com.plane.sincer.entity.EquipMould;
 import com.plane.sincer.service.EquipMouldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.websocket.Session;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -86,4 +89,39 @@ public class EquipMouldController {
         }
         return entity;
     }
+
+    @PostMapping("/mould/upload")
+    public ResponseEntity saveEquipMouldByExcel(MultipartFile file) {
+        ResponseEntity entity = new ResponseEntity();
+        Boolean save = equipMouldService.importEquipMouldByExcel(file);
+        if (save) {
+            entity.setCode("200");
+            entity.setMessage("上传成功");
+        } else {
+            entity.setCode("400");
+            entity.setMessage("上传失败");
+        }
+        return entity;
+    }
+
+    @PostMapping("/mould/inOrOut")
+    public ResponseEntity takeOutMould(Integer id,Integer status,String operaId) {
+        ResponseEntity<Object> entity = new ResponseEntity<>();
+        //获取出库的模具
+        EquipMould mould = equipMouldService.getById(id);
+        //修改该模具的状态
+        mould.setOperaId(operaId);
+        mould.setStatus(status);
+        mould.setOutStoreTime(new Date());
+        boolean upd = equipMouldService.updateById(mould);
+        if(upd){
+            entity.setCode("200");
+            entity.setMessage("状态修改成功");
+        } else {
+            entity.setCode("400");
+            entity.setMessage("状态修改错误");
+        }
+        return entity;
+    }
+
 }

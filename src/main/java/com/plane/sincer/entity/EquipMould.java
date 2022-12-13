@@ -57,7 +57,7 @@ public class EquipMould implements Serializable {
     private String address;
 
     /**
-     * 0：不可用状态，1：可用状态
+     * 0：不可用状态，1：可用状态 2：已出库
      */
     private Integer status;
 

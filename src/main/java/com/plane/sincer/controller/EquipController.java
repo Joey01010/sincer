@@ -2,12 +2,16 @@ package com.plane.sincer.controller;
 
 import com.plane.sincer.common.ResponseEntity;
 import com.plane.sincer.entity.Equip;
+import com.plane.sincer.entity.EquipStatus;
+import com.plane.sincer.service.EquipBackupService;
 import com.plane.sincer.service.EquipService;
+import com.plane.sincer.service.EquipStatusService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -17,6 +21,12 @@ public class EquipController {
 
     @Autowired
     private EquipService equipService;
+
+    @Autowired
+    private EquipBackupService equipBackupService;
+
+    @Autowired
+    private EquipStatusService equipStatusService;
 
     @RequestMapping("/list")
     public ResponseEntity getAllEquip(){
@@ -90,4 +100,19 @@ public class EquipController {
         }
         return entity;
     }
+
+    @PostMapping("/backup/upload")
+    public ResponseEntity saveEquipBackupByExcel(MultipartFile file) {
+        ResponseEntity entity = new ResponseEntity();
+        Boolean save = equipBackupService.importEquipBackupByExcel(file);
+        if (save) {
+            entity.setCode("200");
+            entity.setMessage("上传成功");
+        } else {
+            entity.setCode("400");
+            entity.setMessage("上传失败");
+        }
+        return entity;
+    }
+
 }
