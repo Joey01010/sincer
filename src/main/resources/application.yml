@@ -5,7 +5,7 @@ spring:
     username: root
     password: root
     # serverTimezone=UTC ??????
-    url: jdbc:mysql://localhost:3306/factory?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/sincer?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
     # mysql8 ???? cj
     driver-class-name: com.mysql.cj.jdbc.Driver
   jackson:
@@ -29,3 +29,5 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
 
+mybatis-plus:
+  type-aliases-package: com.plane.sincer.entity
