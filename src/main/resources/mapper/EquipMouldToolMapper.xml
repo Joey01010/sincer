@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plane.sincer.mapper.EquipMouldToolMapper">
+
+    <resultMap id="BaseResultMap" type="com.plane.sincer.entity.EquipMouldTool">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="terminalOld" column="terminal_old" jdbcType="VARCHAR"/>
+            <result property="terminalNew" column="terminal_new" jdbcType="VARCHAR"/>
+            <result property="lineUp" column="line_up" jdbcType="INTEGER"/>
+            <result property="lineDown" column="line_down" jdbcType="INTEGER"/>
+            <result property="isolateUp" column="isolate_up" jdbcType="INTEGER"/>
+            <result property="isolateDown" column="isolate_down" jdbcType="INTEGER"/>
+            <result property="address" column="address" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="VARCHAR"/>
+            <result property="updateTime" column="update_time" jdbcType="VARCHAR"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,terminal_old,terminal_new,
+        line_up,line_down,isolate_up,
+        isolate_down,address,create_time,
+        update_time,remark
+    </sql>
+</mapper>

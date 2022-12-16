@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plane.sincer.mapper.EquipPdRecordMapper">
+
+    <resultMap id="BaseResultMap" type="com.plane.sincer.entity.EquipPdRecord">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="terminalId" column="terminal_id" jdbcType="VARCHAR"/>
+            <result property="equipRecordId" column="equip_record_id" jdbcType="INTEGER"/>
+            <result property="operaId" column="opera_id" jdbcType="INTEGER"/>
+            <result property="planOp" column="plan_op" jdbcType="INTEGER"/>
+            <result property="realOp" column="real_op" jdbcType="INTEGER"/>
+            <result property="passOp" column="pass_op" jdbcType="INTEGER"/>
+            <result property="startTime" column="start_time" jdbcType="TIMESTAMP"/>
+            <result property="endTime" column="end_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,terminal_id,equip_record_id,
+        opera_id,plan_op,real_op,
+        pass_op,start_time,end_time,
+        remark
+    </sql>
+</mapper>
